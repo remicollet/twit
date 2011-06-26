@@ -109,7 +109,7 @@ function register($ckey, $csecret) {
         $info = $oauth->getRequestToken('https://twitter.com/oauth/request_token');
 
         if (isset($info['oauth_token']) && isset($info['oauth_token_secret'])) {
-            echo "\nPlease visit https://twitter.com/oauth/authorize?oauth_token=".$info['oauth_token']."\n";
+            echo "Please visit https://twitter.com/oauth/authorize?oauth_token=".$info['oauth_token']."\n";
             echo "Then run again with 'access' option\n\n";
 
             $conf = getConf();
@@ -134,6 +134,8 @@ function getAccess() {
         $info = $oauth->getAccessToken('https://twitter.com/oauth/access_token');
 
         if (isset($info['oauth_token'])) {
+            echo "Access granted !\n\n";
+
             $conf->addChild('UserToken',  $info['oauth_token']);
             $conf->addChild('UserSecret', $info['oauth_token_secret']);
             $conf->addChild('UserId',     $info['user_id']);
