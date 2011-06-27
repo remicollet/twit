@@ -1,1 +1,68 @@
 A small application to send tweet from command line.
+
+INSTALLATION
+
+    As root for YUM distro (fedora, redhat, centos, ...)
+
+        # yum install php-pecl-oauth
+
+    Others "generic" distro
+
+        # pecl install oauth
+
+    As simple user
+
+        $ wget https://raw.github.com/remicollet/twit/master/twit.php -O ~/bin/twit
+        $ chmod +x  ~/bin/twit
+
+CONFIGURATION
+
+    Register a twitter application on https://dev.twitter.com/apps/new
+
+    $ twit register xxxxxxx yyyyyyyyyyyyyyyyyyy
+    twit version 0.1
+    Please visit https://twitter.com/oauth/authorize?oauth_token=zzzzzz
+    Then run again with 'access' option
+
+    Check the access
+
+    $ twit access
+    twit version 0.1
+    Access granted !
+
+
+UTILISATION
+
+    Without option, the command display the current status :
+
+    $ twit
+    twit version 0.1
+    Name: Remi Collet
+    Last: twit version 0.1 released, see https://github.com/remicollet/twit
+    Date: Sun Jun 26 08:54:02 +0000 2011
+
+    With a message, it updates the status :
+
+    $ twit 'From blog : http://blog.famillecollet.com/post/2011/06/26/Twitter-en-ligne-de-commande'
+    twit version 0.1
+    Tweet sent for RemiCollet !
+
+
+LICENSE
+
+    Copyright © 2011 Remi Collet
+
+    This file is part of twit.
+
+    twit is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    rpmphp is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with twit.  If not, see <http://www.gnu.org/licenses/>.
